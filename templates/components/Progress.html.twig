@@ -1,0 +1,25 @@
+{% props
+    value = null,
+%}
+
+{% set numericValue = (value ?? 0)|float %}
+{% set clampedValue = max(0, min(100, numericValue)) %}
+{% set indicatorOffset = 100 - clampedValue %}
+
+<div
+    data-slot="progress"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="{{ clampedValue }}"
+    class="{{ cn('bg-primary/20 relative h-2 w-full overflow-hidden rounded-full', attributes.render('class')) }}"
+    {{ attributes }}
+>
+    {% block indicator %}
+        <div
+            data-slot="progress-indicator"
+            class="bg-primary h-full w-full flex-1 transition-all"
+            style="transform: translateX(-{{ indicatorOffset }}%);"
+        ></div>
+    {% endblock %}
+</div>
