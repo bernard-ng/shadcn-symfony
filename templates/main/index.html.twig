@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+    <twig:Button>Primary</twig:Button>
+    <twig:Button variant="secondary">Secondary</twig:Button>
+    <twig:Button variant="ghost">Ghost</twig:Button>
+    <twig:Button size="icon">
+        <twig:ux:icon name="lucide:circle-user-round" />
+    </twig:Button>
+{% endblock %}
