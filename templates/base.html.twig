@@ -12,9 +12,8 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body>
-
-        <div class="container mx-auto"
+    <body class="bg-background text-foreground antialiased">
+        <div class="container mx-auto px-6">
             {% block body %}{% endblock %}
         </div>
     </body>

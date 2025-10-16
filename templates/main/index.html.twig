@@ -1,40 +1,213 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{% block title %}Component Showcase{% endblock %}
 
 {% block body %}
-    <div class="flex items-center gap-2">
-        <tiwg:Button variant="default">Button</tiwg:Button>
-        <twig:Button variant="outline" size="icon" aria-label="Submit">
-            <twig:ux:icon name="lucide:arrow-up" />
-        </twig:Button>
-    </div>
+    <div class="flex flex-col gap-16 py-16">
+        <header class="flex flex-col items-center gap-4 text-center">
+            <p class="text-sm font-medium uppercase tracking-[0.3em] text-primary/80">Components</p>
+            <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">shadcn/ui for Twig</h1>
+            <p class="max-w-2xl text-balance text-base text-muted-foreground sm:text-lg">
+                A curated collection of Twig components inspired by shadcn/ui. Explore the examples below to learn how each
+                component behaves and how they can work together to build polished interfaces.
+            </p>
+        </header>
 
-    <div class="flex items-center gap-2">
-        <twig:Alert>
-            <twig:ux:icon name="lucide:check-circle-2" />
-            <twig:AlertTitle>Success! Your changes have been saved</twig:AlertTitle>
-            <twig:AlertDescription>
-                This is an alert with icon, title and description.
-            </twig:AlertDescription>
-        </twig:Alert>
-        <twig:Alert>
-            <twig:ux:icon name="lucide:popcorn" />
-            <twig:AlertTitle>
-                This Alert has a title and an icon. No description.
-            </twig:AlertTitle>
-        </twig:Alert>
-        <twig:Alert variant="destructive">
-            <twig:ux:icon name="lucide:alert-circle" />
-            <twig:AlertTitle>Unable to process your payment.</twig:AlertTitle>
-            <twig:AlertDescription>
-                <p>Please verify your billing information and try again.</p>
-                <ul class="list-inside list-disc text-sm">
-                    <li>Check your card details</li>
-                    <li>Ensure sufficient funds</li>
-                    <li>Verify billing address</li>
-                </ul>
-            </twig:AlertDescription>
-        </twig:Alert>
+        <section class="flex flex-col items-center gap-6 text-center">
+            <div class="max-w-2xl space-y-2">
+                <h2 class="text-3xl font-semibold tracking-tight">Button</h2>
+                <p class="text-muted-foreground">
+                    Buttons come in multiple variants and sizes to adapt to a wide range of use cases.
+                </p>
+            </div>
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <twig:Button variant="default">Default</twig:Button>
+                <twig:Button variant="outline">Outline</twig:Button>
+                <twig:Button variant="destructive">Destructive</twig:Button>
+                <twig:Button variant="ghost">Ghost</twig:Button>
+                <twig:Button size="icon" aria-label="Send">
+                    <twig:ux:icon name="lucide:arrow-up" />
+                </twig:Button>
+            </div>
+        </section>
+
+        <section class="flex flex-col items-center gap-6 text-center">
+            <div class="max-w-2xl space-y-2">
+                <h2 class="text-3xl font-semibold tracking-tight">Alert</h2>
+                <p class="text-muted-foreground">
+                    Alerts provide contextual messaging with optional titles, descriptions, and icons.
+                </p>
+            </div>
+            <div class="grid w-full max-w-5xl gap-6 md:grid-cols-3">
+                <twig:Alert class="h-full text-left">
+                    <twig:ux:icon name="lucide:check-circle-2" />
+                    <twig:AlertTitle>Success! Your changes have been saved</twig:AlertTitle>
+                    <twig:AlertDescription>
+                        Everything looks good. You can safely continue with your workflow.
+                    </twig:AlertDescription>
+                </twig:Alert>
+                <twig:Alert class="h-full text-left">
+                    <twig:ux:icon name="lucide:popcorn" />
+                    <twig:AlertTitle>This alert has an icon and a title.</twig:AlertTitle>
+                </twig:Alert>
+                <twig:Alert variant="destructive" class="h-full text-left">
+                    <twig:ux:icon name="lucide:alert-circle" />
+                    <twig:AlertTitle>Unable to process your payment.</twig:AlertTitle>
+                    <twig:AlertDescription>
+                        Double-check your billing details and ensure that your payment method has sufficient funds.
+                    </twig:AlertDescription>
+                </twig:Alert>
+            </div>
+        </section>
+
+        <section class="flex flex-col items-center gap-6 text-center">
+            <div class="max-w-2xl space-y-2">
+                <h2 class="text-3xl font-semibold tracking-tight">Card</h2>
+                <p class="text-muted-foreground">
+                    Compose headers, content, and actions to create structured surfaces for your information.
+                </p>
+            </div>
+            <div class="flex w-full justify-center">
+                <twig:Card class="max-w-md text-left">
+                    <twig:CardHeader>
+                        <twig:CardTitle>Daily Overview</twig:CardTitle>
+                        <twig:CardDescription>
+                            Track how your team performs across the most important metrics.
+                        </twig:CardDescription>
+                    </twig:CardHeader>
+                    <twig:CardContent class="space-y-4">
+                        <div class="flex items-center justify-between text-sm">
+                            <span>Active users</span>
+                            <span class="font-semibold">+4.75%</span>
+                        </div>
+                        <twig:Progress value="68" />
+                        <div class="grid gap-2 text-sm">
+                            <p>Tasks completed: <span class="font-semibold">32</span></p>
+                            <p>Bugs resolved: <span class="font-semibold">12</span></p>
+                        </div>
+                    </twig:CardContent>
+                    <twig:CardFooter>
+                        <twig:Button variant="outline">View report</twig:Button>
+                        <twig:Button>Share</twig:Button>
+                    </twig:CardFooter>
+                </twig:Card>
+            </div>
+        </section>
+
+        <section class="flex flex-col items-center gap-6 text-center">
+            <div class="max-w-2xl space-y-2">
+                <h2 class="text-3xl font-semibold tracking-tight">Empty State</h2>
+                <p class="text-muted-foreground">
+                    Combine the Empty slots to design helpful placeholders when there is no data to display.
+                </p>
+            </div>
+            <div class="flex w-full justify-center">
+                <twig:Empty class="max-w-xl border">
+                    <twig:EmptyHeader>
+                        <twig:EmptyMedia variant="icon">
+                            <twig:ux:icon name="lucide:inbox" />
+                        </twig:EmptyMedia>
+                        <twig:EmptyTitle>No items yet</twig:EmptyTitle>
+                        <twig:EmptyDescription>
+                            Get started by creating your first record. You can always import data later on.
+                        </twig:EmptyDescription>
+                    </twig:EmptyHeader>
+                    <twig:EmptyContent>
+                        <twig:Button>Create item</twig:Button>
+                        <twig:Button variant="outline">Import data</twig:Button>
+                    </twig:EmptyContent>
+                </twig:Empty>
+            </div>
+        </section>
+
+        <section class="flex flex-col items-center gap-6 text-center">
+            <div class="max-w-2xl space-y-2">
+                <h2 class="text-3xl font-semibold tracking-tight">Items</h2>
+                <p class="text-muted-foreground">
+                    Items organize information into rich, interactive rows with configurable layouts.
+                </p>
+            </div>
+            <div class="flex w-full justify-center">
+                <twig:ItemGroup class="w-full max-w-3xl gap-3">
+                    <twig:Item variant="outline">
+                        <twig:ItemMedia variant="icon">
+                            <twig:ux:icon name="lucide:calendar" />
+                        </twig:ItemMedia>
+                        <twig:ItemContent>
+                            <twig:ItemHeader>
+                                <twig:ItemTitle>Quarterly planning</twig:ItemTitle>
+                                <twig:ItemActions>
+                                    <twig:Button variant="ghost" size="icon" aria-label="Open">
+                                        <twig:ux:icon name="lucide:ellipsis" />
+                                    </twig:Button>
+                                </twig:ItemActions>
+                            </twig:ItemHeader>
+                            <twig:ItemDescription>
+                                Collaborate with your team to define OKRs and milestones for the next quarter.
+                            </twig:ItemDescription>
+                            <twig:ItemFooter>
+                                <div class="flex items-center gap-2 text-xs text-muted-foreground">
+                                    <twig:ux:icon name="lucide:users" class="size-3.5" />
+                                    <span>8 members</span>
+                                </div>
+                                <twig:Separator orientation="vertical" class="h-4" />
+                                <span class="text-xs text-muted-foreground">Updated 2 days ago</span>
+                            </twig:ItemFooter>
+                        </twig:ItemContent>
+                    </twig:Item>
+
+                    <twig:Item variant="muted">
+                        <twig:ItemMedia variant="image">
+                            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=160&q=80" alt="Workspace" />
+                        </twig:ItemMedia>
+                        <twig:ItemContent>
+                            <twig:ItemTitle>Design review</twig:ItemTitle>
+                            <twig:ItemDescription>
+                                Collect feedback on the latest interface refresh and align on next steps.
+                            </twig:ItemDescription>
+                        </twig:ItemContent>
+                    </twig:Item>
+                </twig:ItemGroup>
+            </div>
+        </section>
+
+        <section class="flex flex-col items-center gap-6 text-center">
+            <div class="max-w-2xl space-y-2">
+                <h2 class="text-3xl font-semibold tracking-tight">Keyboard shortcuts</h2>
+                <p class="text-muted-foreground">
+                    Present key combinations with the Kbd component to reinforce keyboard-first workflows.
+                </p>
+            </div>
+            <div class="flex flex-col items-center gap-3">
+                <twig:KbdGroup>
+                    <twig:Kbd>⌘</twig:Kbd>
+                    <twig:Kbd>K</twig:Kbd>
+                </twig:KbdGroup>
+                <twig:KbdGroup>
+                    <twig:Kbd>Shift</twig:Kbd>
+                    <twig:Separator orientation="vertical" class="h-4" />
+                    <twig:Kbd>?</twig:Kbd>
+                </twig:KbdGroup>
+            </div>
+        </section>
+
+        <section class="flex flex-col items-center gap-6 text-center">
+            <div class="max-w-2xl space-y-2">
+                <h2 class="text-3xl font-semibold tracking-tight">Skeleton &amp; Progress</h2>
+                <p class="text-muted-foreground">
+                    Use feedback components to indicate loading states and track user progress.
+                </p>
+            </div>
+            <div class="flex w-full max-w-xl flex-col items-center gap-6">
+                <twig:Skeleton class="h-24 w-full rounded-xl" />
+                <div class="w-full space-y-3 text-left">
+                    <div class="flex items-center justify-between text-sm">
+                        <span>Profile completion</span>
+                        <span class="font-medium">72%</span>
+                    </div>
+                    <twig:Progress value="72" />
+                </div>
+            </div>
+        </section>
     </div>
 {% endblock %}

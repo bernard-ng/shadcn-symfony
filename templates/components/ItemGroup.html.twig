@@ -1,0 +1,8 @@
+<div
+    role="list"
+    data-slot="item-group"
+    class="{{ cn('group/item-group flex flex-col', attributes.render('class')) }}"
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</div>
