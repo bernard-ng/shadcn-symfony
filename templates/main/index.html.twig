@@ -3,10 +3,38 @@
 {% block title %}Hello MainController!{% endblock %}
 
 {% block body %}
-    <twig:Button>Primary</twig:Button>
-    <twig:Button variant="secondary">Secondary</twig:Button>
-    <twig:Button variant="ghost">Ghost</twig:Button>
-    <twig:Button size="icon">
-        <twig:ux:icon name="lucide:circle-user-round" />
-    </twig:Button>
+    <div class="flex items-center gap-2">
+        <tiwg:Button variant="default">Button</tiwg:Button>
+        <twig:Button variant="outline" size="icon" aria-label="Submit">
+            <twig:ux:icon name="lucide:arrow-up" />
+        </twig:Button>
+    </div>
+
+    <div class="flex items-center gap-2">
+        <twig:Alert>
+            <twig:ux:icon name="lucide:check-circle-2" />
+            <twig:AlertTitle>Success! Your changes have been saved</twig:AlertTitle>
+            <twig:AlertDescription>
+                This is an alert with icon, title and description.
+            </twig:AlertDescription>
+        </twig:Alert>
+        <twig:Alert>
+            <twig:ux:icon name="lucide:popcorn" />
+            <twig:AlertTitle>
+                This Alert has a title and an icon. No description.
+            </twig:AlertTitle>
+        </twig:Alert>
+        <twig:Alert variant="destructive">
+            <twig:ux:icon name="lucide:alert-circle" />
+            <twig:AlertTitle>Unable to process your payment.</twig:AlertTitle>
+            <twig:AlertDescription>
+                <p>Please verify your billing information and try again.</p>
+                <ul class="list-inside list-disc text-sm">
+                    <li>Check your card details</li>
+                    <li>Ensure sufficient funds</li>
+                    <li>Verify billing address</li>
+                </ul>
+            </twig:AlertDescription>
+        </twig:Alert>
+    </div>
 {% endblock %}
