@@ -1,0 +1,12 @@
+{% props
+    label = 'Loading',
+%}
+
+<twig:ux:icon
+    data-slot="spinner"
+    name="lucide:loader-2"
+    role="status"
+    aria-label="{{ label }}"
+    class="{{ cn('size-4 animate-spin', attributes.render('class')) }}"
+    {{ attributes }}
+/>
