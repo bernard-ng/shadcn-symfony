@@ -1,0 +1,16 @@
+{% props
+    size = 'default',
+%}
+
+{% include 'components/_button-variants.html.twig' %}
+
+<a
+    data-slot="pagination-link"
+    aria-label="Go to next page"
+    data-active="false"
+    class="{{ cn(buttonVariants.apply({ variant: 'ghost', size }), 'gap-1 px-2.5 sm:pr-2.5', attributes.render('class')) }}"
+    {{ attributes }}
+>
+    <span class="hidden sm:block">Next</span>
+    <twig:ux:icon name="lucide:chevron-right" class="size-4" />
+</a>

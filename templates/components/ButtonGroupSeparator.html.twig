@@ -1,0 +1,22 @@
+{% props
+    orientation = 'vertical',
+    decorative = true,
+%}
+
+<div
+    data-slot="button-group-separator"
+    data-orientation="{{ orientation }}"
+    class="{{ cn(
+        'bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px',
+        'bg-input relative !m-0 self-stretch data-[orientation=vertical]:h-auto',
+        attributes.render('class')
+    ) }}"
+    {% if decorative %}
+        role="none"
+        aria-hidden="true"
+    {% else %}
+        role="separator"
+        aria-orientation="{{ orientation }}"
+    {% endif %}
+    {{ attributes }}
+></div>

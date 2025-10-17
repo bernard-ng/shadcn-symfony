@@ -1,0 +1,21 @@
+{% set slotContent %}
+    {% block content %}{% endblock %}
+{% endset %}
+{% set slotContent = slotContent|trim %}
+
+<div
+    data-slot="field-separator"
+    data-content="{{ slotContent is not empty ? 'true' : 'false' }}"
+    class="{{ cn('relative -my-2 h-5 text-sm group-data-[variant=outline]/field-group:-mb-2', attributes.render('class')) }}"
+    {{ attributes }}
+>
+    <div class="bg-border absolute inset-0 top-1/2 h-px w-full"></div>
+    {% if slotContent is not empty %}
+        <span
+            class="bg-background text-muted-foreground relative mx-auto block w-fit px-2"
+            data-slot="field-separator-content"
+        >
+            {{ slotContent|raw }}
+        </span>
+    {% endif %}
+</div>

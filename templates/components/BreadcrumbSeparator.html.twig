@@ -1,0 +1,14 @@
+<li
+    data-slot="breadcrumb-separator"
+    role="presentation"
+    aria-hidden="true"
+    class="{{ cn('[&>svg]:size-3.5', attributes.render('class')) }}"
+    {{ attributes }}
+>
+    {% set separatorContent %}{% block content %}{% endblock %}{% endset %}
+    {% if separatorContent is not empty and separatorContent|trim is not empty %}
+        {{ separatorContent|raw }}
+    {% else %}
+        <twig:ux:icon name="lucide:chevron-right" class="size-3.5" />
+    {% endif %}
+</li>

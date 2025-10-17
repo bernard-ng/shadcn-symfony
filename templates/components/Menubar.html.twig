@@ -1,0 +1,8 @@
+<div
+    role="menubar"
+    data-slot="menubar"
+    class="{{ cn('bg-background flex h-9 items-center gap-1 rounded-md border p-1 shadow-xs', attributes.render('class')) }}"
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</div>
