@@ -1,0 +1,18 @@
+{% props
+    delayDuration = 0,
+%}
+
+{% set forwardedAttributes = attribute(attributes, 'without', ['class']) ?? attributes %}
+
+<div
+    data-slot="tooltip-provider"
+    data-delay-duration="{{ delayDuration }}"
+>
+    <div
+        data-slot="tooltip"
+        class="{{ cn(attributes.render('class')) }}"
+        {{ forwardedAttributes }}
+    >
+        {% block content %}{% endblock %}
+    </div>
+</div>

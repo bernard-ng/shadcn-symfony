@@ -1,0 +1,12 @@
+{% props
+    type = 'button',
+%}
+
+<button
+    type="{{ type }}"
+    data-slot="popover-trigger"
+    class="{{ cn(attributes.render('class')) }}"
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</button>
