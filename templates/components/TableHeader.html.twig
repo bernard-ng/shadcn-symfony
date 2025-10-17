@@ -1,0 +1,7 @@
+<thead
+    data-slot="table-header"
+    class="{{ cn('[&_tr]:border-b', attributes.render('class')) }}"
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</thead>

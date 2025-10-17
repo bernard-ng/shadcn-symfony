@@ -33,6 +33,46 @@
 
         <section class="flex flex-col items-center gap-6 text-center">
             <div class="max-w-2xl space-y-2">
+                <h2 class="text-3xl font-semibold tracking-tight">Badge</h2>
+                <p class="text-muted-foreground">
+                    Badges highlight statuses, labels, or counts with compact visual treatments.
+                </p>
+            </div>
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <twig:Badge>New</twig:Badge>
+                <twig:Badge variant="secondary">In Review</twig:Badge>
+                <twig:Badge variant="destructive">Overdue</twig:Badge>
+                <twig:Badge variant="outline">
+                    <twig:ux:icon name="lucide:star" />
+                    Featured
+                </twig:Badge>
+            </div>
+        </section>
+
+        <section class="flex flex-col items-center gap-6 text-center">
+            <div class="max-w-2xl space-y-2">
+                <h2 class="text-3xl font-semibold tracking-tight">Avatar</h2>
+                <p class="text-muted-foreground">
+                    Avatars display user imagery with graceful fallbacks for initials or icons when images are unavailable.
+                </p>
+            </div>
+            <div class="flex flex-wrap items-center justify-center gap-6">
+                <twig:Avatar class="size-12">
+                    <twig:AvatarImage src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=120&h=120&fit=crop" alt="Portrait of Taylor" />
+                    <twig:AvatarFallback>TJ</twig:AvatarFallback>
+                </twig:Avatar>
+                <twig:Avatar class="size-12 border-2 border-primary">
+                    <twig:AvatarImage src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=120&h=120&fit=crop" alt="Portrait of Sasha" />
+                    <twig:AvatarFallback>SR</twig:AvatarFallback>
+                </twig:Avatar>
+                <twig:Avatar class="size-12">
+                    <twig:AvatarFallback class="text-sm font-medium uppercase">JD</twig:AvatarFallback>
+                </twig:Avatar>
+            </div>
+        </section>
+
+        <section class="flex flex-col items-center gap-6 text-center">
+            <div class="max-w-2xl space-y-2">
                 <h2 class="text-3xl font-semibold tracking-tight">Alert</h2>
                 <p class="text-muted-foreground">
                     Alerts provide contextual messaging with optional titles, descriptions, and icons.
@@ -91,6 +131,72 @@
                         <twig:Button>Share</twig:Button>
                     </twig:CardFooter>
                 </twig:Card>
+            </div>
+        </section>
+
+        <section class="flex flex-col items-center gap-6 text-center">
+            <div class="max-w-2xl space-y-2">
+                <h2 class="text-3xl font-semibold tracking-tight">Table</h2>
+                <p class="text-muted-foreground">
+                    Tables organize information into columns and rows, making it easy to scan structured data at a glance.
+                </p>
+            </div>
+            <div class="w-full max-w-4xl text-left">
+                <twig:Table containerClass="rounded-lg border" class="min-w-[640px]">
+                    <twig:TableCaption>A summary of your most recent invoices.</twig:TableCaption>
+                    <twig:TableHeader>
+                        <twig:TableRow>
+                            <twig:TableHead class="w-[140px]">Invoice</twig:TableHead>
+                            <twig:TableHead>Status</twig:TableHead>
+                            <twig:TableHead>Date</twig:TableHead>
+                            <twig:TableHead class="text-right">Amount</twig:TableHead>
+                        </twig:TableRow>
+                    </twig:TableHeader>
+                    <twig:TableBody>
+                        <twig:TableRow>
+                            <twig:TableCell>INV-001245</twig:TableCell>
+                            <twig:TableCell>
+                                <twig:Badge
+                                    variant="outline"
+                                    class="border-emerald-500/20 bg-emerald-500/10 text-emerald-600 [a&]:hover:bg-emerald-500/15"
+                                >
+                                    Paid
+                                </twig:Badge>
+                            </twig:TableCell>
+                            <twig:TableCell>Oct 15, 2024</twig:TableCell>
+                            <twig:TableCell class="text-right">$1,248.00</twig:TableCell>
+                        </twig:TableRow>
+                        <twig:TableRow>
+                            <twig:TableCell>INV-001244</twig:TableCell>
+                            <twig:TableCell>
+                                <twig:Badge
+                                    variant="outline"
+                                    class="border-amber-500/20 bg-amber-500/10 text-amber-600 [a&]:hover:bg-amber-500/15"
+                                >
+                                    Pending
+                                </twig:Badge>
+                            </twig:TableCell>
+                            <twig:TableCell>Oct 12, 2024</twig:TableCell>
+                            <twig:TableCell class="text-right">$980.00</twig:TableCell>
+                        </twig:TableRow>
+                        <twig:TableRow>
+                            <twig:TableCell>INV-001243</twig:TableCell>
+                            <twig:TableCell>
+                                <twig:Badge variant="outline" class="border-border text-muted-foreground">
+                                    Draft
+                                </twig:Badge>
+                            </twig:TableCell>
+                            <twig:TableCell>Oct 5, 2024</twig:TableCell>
+                            <twig:TableCell class="text-right">$764.50</twig:TableCell>
+                        </twig:TableRow>
+                    </twig:TableBody>
+                    <twig:TableFooter>
+                        <twig:TableRow>
+                            <twig:TableCell colspan="3">Total</twig:TableCell>
+                            <twig:TableCell class="text-right">$2,992.50</twig:TableCell>
+                        </twig:TableRow>
+                    </twig:TableFooter>
+                </twig:Table>
             </div>
         </section>
 
@@ -193,14 +299,21 @@
 
         <section class="flex flex-col items-center gap-6 text-center">
             <div class="max-w-2xl space-y-2">
-                <h2 class="text-3xl font-semibold tracking-tight">Skeleton &amp; Progress</h2>
+                <h2 class="text-3xl font-semibold tracking-tight">Spinner, Skeleton &amp; Progress</h2>
                 <p class="text-muted-foreground">
                     Use feedback components to indicate loading states and track user progress.
                 </p>
             </div>
-            <div class="flex w-full max-w-xl flex-col items-center gap-6">
+            <div class="flex w-full max-w-xl flex-col gap-6 text-left">
+                <div class="flex items-center gap-3 rounded-lg border bg-muted/40 px-4 py-3">
+                    <twig:Spinner class="size-5 text-primary" label="Syncing workspace" />
+                    <div class="space-y-1">
+                        <p class="text-sm font-medium text-foreground">Syncing workspace</p>
+                        <p class="text-sm text-muted-foreground">This usually only takes a few seconds.</p>
+                    </div>
+                </div>
                 <twig:Skeleton class="h-24 w-full rounded-xl" />
-                <div class="w-full space-y-3 text-left">
+                <div class="space-y-3">
                     <div class="flex items-center justify-between text-sm">
                         <span>Profile completion</span>
                         <span class="font-medium">72%</span>

@@ -1,0 +1,16 @@
+{% props
+    containerClass = null,
+%}
+
+<div
+    data-slot="table-container"
+    class="{{ cn('relative w-full overflow-x-auto', containerClass) }}"
+>
+    <table
+        data-slot="table"
+        class="{{ cn('w-full caption-bottom text-sm', attributes.render('class')) }}"
+        {{ attributes }}
+    >
+        {% block content %}{% endblock %}
+    </table>
+</div>
