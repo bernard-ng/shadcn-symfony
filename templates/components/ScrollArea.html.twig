@@ -1,0 +1,21 @@
+{% set forwardedAttributes = attribute(attributes, 'without', ['class']) ?? attributes %}
+
+<div
+    data-slot="scroll-area"
+    class="{{ cn('relative', attributes.render('class')) }}"
+    {{ forwardedAttributes }}
+>
+    {% block viewport %}
+        <twig:ScrollArea:Viewport>
+            {% block content %}{% endblock %}
+        </twig:ScrollArea:Viewport>
+    {% endblock %}
+
+    {% block scrollbar %}
+        <twig:ScrollArea:Scrollbar />
+    {% endblock %}
+
+    {% block corner %}
+        <div data-slot="scroll-area-corner"></div>
+    {% endblock %}
+</div>
