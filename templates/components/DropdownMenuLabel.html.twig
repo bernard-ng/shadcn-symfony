@@ -1,0 +1,15 @@
+{% props
+    inset = false,
+%}
+
+{% set insetAttribute = inset ? 'true' : null %}
+
+<div
+    role="presentation"
+    data-slot="dropdown-menu-label"
+    {% if insetAttribute %}data-inset="{{ insetAttribute }}"{% endif %}
+    class="{{ cn('px-2 py-1.5 text-sm font-medium data-[inset]:pl-8', attributes.render('class')) }}"
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</div>
