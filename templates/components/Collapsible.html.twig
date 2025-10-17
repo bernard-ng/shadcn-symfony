@@ -1,0 +1,16 @@
+{% props
+    open = false,
+%}
+
+{% set state = open ? 'open' : 'closed' %}
+
+<div
+    data-slot="collapsible"
+    data-controller="ui--collapsible"
+    data-state="{{ state }}"
+    data-ui--collapsible-open-value="{{ open ? 'true' : 'false' }}"
+    class="{{ cn(attributes.render('class')) }}"
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</div>

@@ -1,0 +1,14 @@
+{% props
+    tag = 'button',
+    type = 'button',
+%}
+
+<{{ tag }}
+    data-slot="alert-dialog-trigger"
+    data-ui--alert-dialog-target="trigger"
+    data-action="click->ui--alert-dialog#open"
+    {% if tag == 'button' %}type="{{ type }}"{% endif %}
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</{{ tag }}>

@@ -28,10 +28,10 @@ export default class extends Controller {
         this.previousActiveElement = null;
         this.isCurrentlyOpen = undefined;
 
-        this.sheetId = this.element.id || this.generateId('sheet');
+        this.dialogId = this.element.id || this.generateId('alert-dialog');
 
         if (!this.element.id) {
-            this.element.id = this.sheetId;
+            this.element.id = this.dialogId;
         }
 
         this.contentTargets.forEach((content, index) => {
@@ -113,6 +113,7 @@ export default class extends Controller {
         this.triggerTargets.forEach((trigger) => {
             trigger.dataset.state = state;
             trigger.setAttribute('aria-expanded', ariaExpanded);
+            trigger.setAttribute('aria-haspopup', 'dialog');
 
             if (contentId) {
                 trigger.setAttribute('aria-controls', contentId);
@@ -291,12 +292,12 @@ export default class extends Controller {
 
     ensureContentId(content, index) {
         if (!content.id) {
-            content.id = `${this.sheetId}-content-${index + 1}`;
+            content.id = `${this.dialogId}-content-${index + 1}`;
         }
     }
 
     ensureAriaAttributes(content) {
-        const title = content.querySelector('[data-slot="sheet-title"]');
+        const title = content.querySelector('[data-slot="alert-dialog-title"]');
 
         if (title instanceof HTMLElement) {
             if (!title.id) {
@@ -306,7 +307,7 @@ export default class extends Controller {
             content.setAttribute('aria-labelledby', title.id);
         }
 
-        const description = content.querySelector('[data-slot="sheet-description"]');
+        const description = content.querySelector('[data-slot="alert-dialog-description"]');
 
         if (description instanceof HTMLElement) {
             if (!description.id) {
