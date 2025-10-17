@@ -396,5 +396,357 @@
                 </div>
             </div>
         </section>
+
+        <section class="flex flex-col items-center gap-6 text-center">
+            <div class="max-w-2xl space-y-2">
+                <h2 class="text-3xl font-semibold tracking-tight">Breadcrumb, Pagination &amp; Button Group</h2>
+                <p class="text-muted-foreground">
+                    Combine navigation helpers to show users where they are and how to move between views.
+                </p>
+            </div>
+            <div class="flex w-full max-w-4xl flex-col gap-8 text-left">
+                <twig:Breadcrumb>
+                    <twig:Breadcrumb:List>
+                        <twig:Breadcrumb:Item>
+                            <twig:Breadcrumb:Link href="#">Dashboard</twig:Breadcrumb:Link>
+                        </twig:Breadcrumb:Item>
+                        <twig:Breadcrumb:Separator />
+                        <twig:Breadcrumb:Item>
+                            <twig:Breadcrumb:Link href="#">Projects</twig:Breadcrumb:Link>
+                        </twig:Breadcrumb:Item>
+                        <twig:Breadcrumb:Separator />
+                        <twig:Breadcrumb:Item>
+                            <twig:Breadcrumb:Page>New Campaign</twig:Breadcrumb:Page>
+                        </twig:Breadcrumb:Item>
+                    </twig:Breadcrumb:List>
+                </twig:Breadcrumb>
+
+                <twig:Pagination class="justify-center">
+                    <twig:Pagination:Content>
+                        <twig:Pagination:Previous href="#" />
+                        <twig:Pagination:Item>
+                            <twig:Pagination:Link href="#" aria-label="Go to page 1">1</twig:Pagination:Link>
+                        </twig:Pagination:Item>
+                        <twig:Pagination:Item>
+                            <twig:Pagination:Link href="#" isActive=true aria-label="Page 2">2</twig:Pagination:Link>
+                        </twig:Pagination:Item>
+                        <twig:Pagination:Item>
+                            <twig:Pagination:Link href="#" aria-label="Go to page 3">3</twig:Pagination:Link>
+                        </twig:Pagination:Item>
+                        <twig:Pagination:Ellipsis />
+                        <twig:Pagination:Item>
+                            <twig:Pagination:Link href="#" aria-label="Go to page 8">8</twig:Pagination:Link>
+                        </twig:Pagination:Item>
+                        <twig:Pagination:Next href="#" />
+                    </twig:Pagination:Content>
+                </twig:Pagination>
+
+                    <twig:ButtonGroup class="flex flex-wrap gap-2">
+                        <twig:ButtonGroup:Text>
+                            <twig:ux:icon name="lucide:filter" />
+                            Filters
+                        </twig:ButtonGroup:Text>
+                        <twig:ButtonGroup:Separator />
+                        <twig:Button variant="outline">Reset</twig:Button>
+                        <twig:Button>Apply</twig:Button>
+                    </twig:ButtonGroup>
+            </div>
+        </section>
+
+        <section class="flex flex-col items-center gap-6 text-center">
+            <div class="max-w-2xl space-y-2">
+                <h2 class="text-3xl font-semibold tracking-tight">Menus &amp; Toggles</h2>
+                <p class="text-muted-foreground">
+                    Layer menus and toggleable controls to encourage exploration of configuration options.
+                </p>
+            </div>
+            <div class="grid w-full max-w-5xl gap-8 text-left md:grid-cols-2">
+                <div class="space-y-4">
+                    <twig:DropdownMenu>
+                        <twig:DropdownMenu:Trigger class="inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm font-medium shadow-xs transition-colors hover:bg-accent">
+                            Workspace settings
+                            <twig:ux:icon name="lucide:chevron-down" class="size-4" />
+                        </twig:DropdownMenu:Trigger>
+                        <twig:DropdownMenu:Content class="w-56">
+                            <twig:DropdownMenu:Label>Account</twig:DropdownMenu:Label>
+                            <twig:DropdownMenu:Separator />
+                            <twig:DropdownMenu:Group>
+                                <twig:DropdownMenu:Item href="#">
+                                    <twig:ux:icon name="lucide:user" class="size-4" />
+                                    Profile
+                                </twig:DropdownMenu:Item>
+                                <twig:DropdownMenu:Item href="#">
+                                    <twig:ux:icon name="lucide:credit-card" class="size-4" />
+                                    Billing
+                                </twig:DropdownMenu:Item>
+                                <twig:DropdownMenu:CheckboxItem checked=true>
+                                    Email reports
+                                </twig:DropdownMenu:CheckboxItem>
+                                <twig:DropdownMenu:RadioGroup value="daily">
+                                    <twig:DropdownMenu:RadioItem value="daily">Daily summary</twig:DropdownMenu:RadioItem>
+                                    <twig:DropdownMenu:RadioItem value="weekly">Weekly digest</twig:DropdownMenu:RadioItem>
+                                </twig:DropdownMenu:RadioGroup>
+                            </twig:DropdownMenu:Group>
+                        </twig:DropdownMenu:Content>
+                    </twig:DropdownMenu>
+
+                    <twig:Menubar class="w-full rounded-lg border p-1">
+                        <twig:Menubar:Menu>
+                            <twig:Menubar:Trigger>File</twig:Menubar:Trigger>
+                            <twig:Menubar:Content>
+                                <twig:Menubar:Item>New Tab</twig:Menubar:Item>
+                                <twig:Menubar:Item>Open...</twig:Menubar:Item>
+                                <twig:Menubar:Separator />
+                                <twig:Menubar:Item>Save as...</twig:Menubar:Item>
+                            </twig:Menubar:Content>
+                        </twig:Menubar:Menu>
+                        <twig:Menubar:Menu>
+                            <twig:Menubar:Trigger>Edit</twig:Menubar:Trigger>
+                            <twig:Menubar:Content>
+                                <twig:Menubar:CheckboxItem checked=true>Show status bar</twig:Menubar:CheckboxItem>
+                                <twig:Menubar:Item>Find</twig:Menubar:Item>
+                            </twig:Menubar:Content>
+                        </twig:Menubar:Menu>
+                    </twig:Menubar>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex flex-wrap gap-3">
+                        <twig:Toggle aria-label="Toggle bold" class="h-9 w-9">
+                            <twig:ux:icon name="lucide:bold" />
+                        </twig:Toggle>
+                        <twig:Toggle pressed=true aria-label="Toggle italic" class="h-9 w-9">
+                            <twig:ux:icon name="lucide:italic" />
+                        </twig:Toggle>
+                        <twig:Toggle aria-label="Toggle underline" class="h-9 w-9">
+                            <twig:ux:icon name="lucide:underline" />
+                        </twig:Toggle>
+                    </div>
+
+                    <twig:ToggleGroup type="multiple" class="gap-2">
+                        <twig:ToggleGroup:Item value="grid" aria-label="Toggle grid view">
+                            <twig:ux:icon name="lucide:layout-grid" />
+                        </twig:ToggleGroup:Item>
+                        <twig:ToggleGroup:Item value="list" aria-label="Toggle list view" pressed=true>
+                            <twig:ux:icon name="lucide:list" />
+                        </twig:ToggleGroup:Item>
+                        <twig:ToggleGroup:Item value="kanban" aria-label="Toggle kanban view">
+                            <twig:ux:icon name="lucide:panel-left" />
+                        </twig:ToggleGroup:Item>
+                    </twig:ToggleGroup>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex flex-col items-center gap-6 text-center">
+            <div class="max-w-2xl space-y-2">
+                <h2 class="text-3xl font-semibold tracking-tight">Form Fields</h2>
+                <p class="text-muted-foreground">
+                    Compose inputs, labels, and helper text to build accessible forms for collecting information.
+                </p>
+            </div>
+            <div class="grid w-full max-w-5xl gap-8 text-left md:grid-cols-2">
+                <div class="space-y-6">
+                    <twig:Field>
+                        <twig:Field:Label for="name">Name</twig:Field:Label>
+                        <twig:Field:Content>
+                            <twig:Input id="name" placeholder="Ada Lovelace" />
+                        </twig:Field:Content>
+                        <twig:Field:Description>We&apos;ll use this to personalize messages.</twig:Field:Description>
+                    </twig:Field>
+
+                    <twig:Field>
+                        <twig:Field:Label for="bio">Bio</twig:Field:Label>
+                        <twig:Field:Content>
+                            <twig:Textarea id="bio" rows="4" placeholder="Tell us a bit about yourself" />
+                        </twig:Field:Content>
+                    </twig:Field>
+
+                    <twig:Field orientation="horizontal" class="items-center">
+                        <twig:Field:Label for="notifications">Email notifications</twig:Field:Label>
+                        <twig:Field:Content>
+                            <twig:Switch id="notifications" />
+                        </twig:Field:Content>
+                    </twig:Field>
+                </div>
+
+                <div class="space-y-6">
+                    <twig:InputGroup>
+                        <twig:InputGroup:Addon align="inline-start">https://</twig:InputGroup:Addon>
+                        <twig:InputGroup:Input placeholder="example.com" />
+                        <twig:InputGroup:Button>Check</twig:InputGroup:Button>
+                    </twig:InputGroup>
+
+                    <div class="flex items-start gap-3">
+                        <twig:Checkbox id="terms" />
+                        <div class="space-y-1 text-sm">
+                            <twig:Label for="terms" class="font-medium">Accept terms</twig:Label>
+                            <p class="text-muted-foreground">You agree to our Terms of Service and Privacy Policy.</p>
+                        </div>
+                    </div>
+
+                    <twig:RadioGroup value="monthly" class="space-y-3">
+                        <twig:RadioGroup:Item value="monthly" id="plan-monthly">
+                            <twig:Label for="plan-monthly">Monthly billing</twig:Label>
+                        </twig:RadioGroup:Item>
+                        <twig:RadioGroup:Item value="annual" id="plan-annual">
+                            <twig:Label for="plan-annual">Annual billing</twig:Label>
+                        </twig:RadioGroup:Item>
+                    </twig:RadioGroup>
+
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm">
+                                <span>Team size</span>
+                                <span>12</span>
+                            </div>
+                            <twig:Slider value=[12] max="20" step="1" />
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex flex-col items-center gap-6 text-center">
+            <div class="max-w-2xl space-y-2">
+                <h2 class="text-3xl font-semibold tracking-tight">Layout Controls</h2>
+                <p class="text-muted-foreground">
+                    Use accordions, collapsibles, tabs, and scroll areas to organize dense interfaces.
+                </p>
+            </div>
+            <div class="grid w-full max-w-5xl gap-8 text-left md:grid-cols-2">
+                <twig:Accordion class="rounded-lg border" data-orientation="vertical">
+                    <twig:Accordion:Item>
+                        <twig:Accordion:Trigger>What&apos;s new in 2.0?</twig:Accordion:Trigger>
+                        <twig:Accordion:Content>
+                            Enhanced performance, dark mode improvements, and streamlined integrations.
+                        </twig:Accordion:Content>
+                    </twig:Accordion:Item>
+                    <twig:Accordion:Item>
+                        <twig:Accordion:Trigger>Can I upgrade for free?</twig:Accordion:Trigger>
+                        <twig:Accordion:Content>
+                            Existing customers receive a free upgrade as part of their subscription.
+                        </twig:Accordion:Content>
+                    </twig:Accordion:Item>
+                </twig:Accordion>
+
+                <div class="space-y-6">
+                    <twig:Collapsible class="rounded-lg border p-4">
+                        <twig:Collapsible:Trigger class="flex w-full items-center justify-between text-sm font-medium">
+                            Team updates
+                            <twig:ux:icon name="lucide:chevron-down" class="size-4" />
+                        </twig:Collapsible:Trigger>
+                        <twig:Collapsible:Content class="mt-3 space-y-2 text-sm text-muted-foreground">
+                            <p>Design reviewed the new onboarding flow.</p>
+                            <p>Engineering shipped improvements to API rate limiting.</p>
+                        </twig:Collapsible:Content>
+                    </twig:Collapsible>
+
+                    <twig:Tabs defaultValue="overview" class="space-y-4">
+                        <twig:Tabs:List class="w-fit rounded-md border p-1">
+                            <twig:Tabs:Trigger value="overview">Overview</twig:Tabs:Trigger>
+                            <twig:Tabs:Trigger value="activity">Activity</twig:Tabs:Trigger>
+                            <twig:Tabs:Trigger value="settings">Settings</twig:Tabs:Trigger>
+                        </twig:Tabs:List>
+                        <twig:Tabs:Content value="overview" class="rounded-md border p-4">
+                            Quick snapshot of your project&apos;s health and key metrics.
+                        </twig:Tabs:Content>
+                        <twig:Tabs:Content value="activity" class="rounded-md border p-4">
+                            Review the latest updates from your team and connected integrations.
+                        </twig:Tabs:Content>
+                        <twig:Tabs:Content value="settings" class="rounded-md border p-4">
+                            Manage permissions, billing, and advanced configuration.
+                        </twig:Tabs:Content>
+                    </twig:Tabs>
+                </div>
+            </div>
+
+            <twig:ScrollArea class="h-48 w-full max-w-2xl rounded-lg border">
+                <twig:ScrollArea:Viewport>
+                    <div class="space-y-3 p-4">
+                        {% for i in 1..8 %}
+                            <div class="rounded-md border p-3 text-left text-sm">
+                                <p class="font-medium">Update {{ i }}</p>
+                                <p class="text-muted-foreground">Detailed description for update {{ i }} with helpful context.</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </twig:ScrollArea:Viewport>
+                <twig:ScrollArea:Scrollbar orientation="vertical" />
+            </twig:ScrollArea>
+        </section>
+
+        <section class="flex flex-col items-center gap-6 text-center">
+            <div class="max-w-2xl space-y-2">
+                <h2 class="text-3xl font-semibold tracking-tight">Overlays &amp; Messaging</h2>
+                <p class="text-muted-foreground">
+                    Popovers, hover cards, tooltips, and dialogs keep context close without sacrificing clarity.
+                </p>
+            </div>
+            <div class="grid w-full max-w-5xl gap-8 text-left md:grid-cols-2">
+                <div class="space-y-6">
+                    <twig:Popover>
+                        <twig:Popover:Trigger tag="twig:Button" variant="outline">
+                            View integrations
+                        </twig:Popover:Trigger>
+                        <twig:Popover:Content class="w-64 space-y-2">
+                            <h3 class="text-sm font-semibold">Popular integrations</h3>
+                            <p class="text-sm text-muted-foreground">
+                                Connect analytics, automation, and communication tools with a click.
+                            </p>
+                            <twig:Button size="sm">Browse directory</twig:Button>
+                        </twig:Popover:Content>
+                    </twig:Popover>
+
+                    <twig:HoverCard>
+                        <twig:HoverCard:Trigger tag="twig:Button" variant="link" class="gap-2">
+                            <twig:ux:icon name="lucide:flame" />
+                            Trending template
+                        </twig:HoverCard:Trigger>
+                        <twig:HoverCard:Content class="w-72 space-y-2">
+                            <h3 class="text-sm font-semibold">Campaign launch kit</h3>
+                            <p class="text-sm text-muted-foreground">
+                                Includes checklists, creative guidelines, and automation recipes to jump-start marketing efforts.
+                            </p>
+                        </twig:HoverCard:Content>
+                    </twig:HoverCard>
+                </div>
+
+                <div class="space-y-6">
+                    <twig:TooltipProvider>
+                        <div class="flex flex-wrap gap-4">
+                            <twig:Tooltip>
+                                <twig:Tooltip:Trigger class="rounded-md border px-3 py-2 text-sm">
+                                    Hover me
+                                </twig:Tooltip:Trigger>
+                                <twig:Tooltip:Content>Helpful context appears instantly.</twig:Tooltip:Content>
+                            </twig:Tooltip>
+                            <twig:Tooltip>
+                                <twig:Tooltip:Trigger class="rounded-md border px-3 py-2 text-sm">
+                                    Focus me
+                                </twig:Tooltip:Trigger>
+                                <twig:Tooltip:Content side="bottom">Tooltips support keyboard focus too.</twig:Tooltip:Content>
+                            </twig:Tooltip>
+                        </div>
+                    </twig:TooltipProvider>
+
+                    <twig:AlertDialog>
+                        <twig:AlertDialog:Trigger tag="twig:Button" variant="destructive">
+                            Delete project
+                        </twig:AlertDialog:Trigger>
+                        <twig:AlertDialog:Content>
+                            <twig:AlertDialog:Header>
+                                <twig:AlertDialog:Title>Are you absolutely sure?</twig:AlertDialog:Title>
+                                <twig:AlertDialog:Description>
+                                    This action cannot be undone. This will permanently remove the project and all associated data.
+                                </twig:AlertDialog:Description>
+                            </twig:AlertDialog:Header>
+                            <twig:AlertDialog:Footer>
+                                <twig:AlertDialog:Cancel>Cancel</twig:AlertDialog:Cancel>
+                                <twig:AlertDialog:Action>Confirm</twig:AlertDialog:Action>
+                            </twig:AlertDialog:Footer>
+                        </twig:AlertDialog:Content>
+                    </twig:AlertDialog>
+                </div>
+            </div>
+        </section>
     </div>
 {% endblock %}
