@@ -1,0 +1,15 @@
+{% props
+    open = false,
+%}
+
+{% set state = open ? 'open' : 'closed' %}
+
+<div
+    data-slot="sheet"
+    data-controller="ui--sheet"
+    data-state="{{ state }}"
+    data-ui--sheet-open-value="{{ open ? 'true' : 'false' }}"
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</div>

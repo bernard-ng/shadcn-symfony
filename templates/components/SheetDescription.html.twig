@@ -1,0 +1,11 @@
+{% props
+    tag = 'p',
+%}
+
+<{{ tag }}
+    data-slot="sheet-description"
+    class="{{ cn('text-muted-foreground text-sm', attributes.render('class')) }}"
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</{{ tag }}>
