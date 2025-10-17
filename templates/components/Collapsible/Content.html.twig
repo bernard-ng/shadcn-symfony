@@ -1,0 +1,13 @@
+{% set forwardedAttributes = attribute(attributes, 'without', ['class']) ?? attributes %}
+
+<div
+    data-slot="collapsible-content"
+    data-ui--collapsible-target="content"
+    data-state="closed"
+    hidden
+    aria-hidden="true"
+    class="{{ cn('data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down overflow-hidden', attributes.render('class')) }}"
+    {{ forwardedAttributes }}
+>
+    {% block content %}{% endblock %}
+</div>

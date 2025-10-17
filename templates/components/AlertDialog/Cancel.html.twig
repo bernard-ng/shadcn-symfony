@@ -1,0 +1,19 @@
+{% props
+    tag = 'button',
+    type = 'button',
+    variant = 'outline',
+    size = 'default',
+%}
+
+{% include 'components/_button-variants.html.twig' %}
+
+<{{ tag }}
+    data-slot="alert-dialog-cancel"
+    data-ui--alert-dialog-target="close"
+    data-action="click->ui--alert-dialog#close"
+    {% if tag == 'button' %}type="{{ type }}"{% endif %}
+    class="{{ cn(buttonVariants.apply({ variant, size }), attributes.render('class')) }}"
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</{{ tag }}>
