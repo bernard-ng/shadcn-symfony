@@ -1,0 +1,22 @@
+{% props
+    variant = 'default',
+    size = 'default',
+    type = 'button',
+    pressed = false,
+%}
+
+{% include 'components/_toggle-variants.html.twig' %}
+
+{% set state = pressed ? 'on' : 'off' %}
+{% set ariaPressed = pressed ? 'true' : 'false' %}
+
+<button
+    type="{{ type }}"
+    data-slot="toggle"
+    data-state="{{ state }}"
+    class="{{ cn(toggleVariants.apply({ variant, size }), attributes.render('class')) }}"
+    aria-pressed="{{ ariaPressed }}"
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</button>

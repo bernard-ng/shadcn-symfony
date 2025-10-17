@@ -1,0 +1,49 @@
+{% props
+    id = null,
+    name = null,
+    value = 'on',
+    checked = false,
+    disabled = false,
+    required = false,
+    invalid = false,
+%}
+
+{% set inputId = id ?? 'switch-' ~ random() %}
+{% set ariaInvalid = invalid ? 'true' : null %}
+
+<label
+    for="{{ inputId }}"
+    data-slot="switch"
+    data-state="{{ checked ? 'checked' : 'unchecked' }}"
+    class="{{ cn(
+        'bg-input dark:bg-input/80 inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent shadow-xs transition-all outline-none',
+        'peer-focus-visible:border-ring peer-focus-visible:ring-ring/50 peer-focus-visible:ring-[3px]',
+        'peer-checked:bg-primary peer-checked:text-primary-foreground',
+        'peer-disabled:cursor-not-allowed peer-disabled:opacity-50',
+        attributes.render('class')
+    ) }}"
+    {% if disabled %}aria-disabled="true"{% endif %}
+    {% if ariaInvalid %}aria-invalid="{{ ariaInvalid }}"{% endif %}
+    {{ attributes }}
+>
+    <input
+        type="checkbox"
+        class="peer sr-only"
+        id="{{ inputId }}"
+        {% if name %}name="{{ name }}"{% endif %}
+        {% if value is not null %}value="{{ value }}"{% endif %}
+        {% if checked %}checked{% endif %}
+        {% if disabled %}disabled{% endif %}
+        {% if required %}required{% endif %}
+        {% if ariaInvalid %}aria-invalid="{{ ariaInvalid }}"{% endif %}
+    >
+    <span
+        data-slot="switch-thumb"
+        class="{{ cn(
+            'bg-background pointer-events-none block size-4 rounded-full ring-0 transition-transform translate-x-0',
+            'peer-checked:translate-x-[calc(100%-2px)]',
+            'dark:bg-foreground dark:peer-checked:bg-primary-foreground'
+        ) }}"
+        aria-hidden="true"
+    ></span>
+</label>
