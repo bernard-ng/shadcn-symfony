@@ -1,0 +1,20 @@
+{% props
+    isActive = false,
+    size = 'icon',
+%}
+
+{% include 'components/_button-variants.html.twig' %}
+
+{% set variant = isActive ? 'outline' : 'ghost' %}
+
+<a
+    data-slot="pagination-link"
+    data-active="{{ isActive ? 'true' : 'false' }}"
+    {% if isActive %}
+        aria-current="page"
+    {% endif %}
+    class="{{ cn(buttonVariants.apply({ variant, size }), attributes.render('class')) }}"
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</a>

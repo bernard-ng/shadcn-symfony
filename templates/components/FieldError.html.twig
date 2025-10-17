@@ -1,0 +1,48 @@
+{% props
+    errors = [],
+%}
+
+{% set slotContent %}
+    {% block content %}{% endblock %}
+{% endset %}
+{% set slotContent = slotContent|trim %}
+
+{% set messages = [] %}
+{% for error in errors %}
+    {% if error is not null %}
+        {% set message = null %}
+        {% if attribute(error, 'message', [], 'any', true, true) %}
+            {% set message = attribute(error, 'message', [], 'any', false, true) %}
+        {% elseif error is iterable %}
+            {% set message = error['message']|default(null) %}
+        {% elseif error is not same as('') and error is not same as(false) and error is not same as(true) %}
+            {% set message = error %}
+        {% endif %}
+        {% if message is not empty %}
+            {% set messages = messages|merge([message]) %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+{% set shouldRender = slotContent is not empty or messages|length > 0 %}
+
+{% if shouldRender %}
+    <div
+        role="alert"
+        data-slot="field-error"
+        class="{{ cn('text-destructive text-sm font-normal', attributes.render('class')) }}"
+        {{ attributes }}
+    >
+        {% if slotContent is not empty %}
+            {{ slotContent|raw }}
+        {% elseif messages|length == 1 %}
+            {{ messages[0] }}
+        {% else %}
+            <ul class="ml-4 flex list-disc flex-col gap-1">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+{% endif %}
