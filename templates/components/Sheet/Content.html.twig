@@ -11,7 +11,7 @@
 
 <div data-slot="sheet-portal">
     {% block overlay %}
-        <twig:SheetOverlay />
+        <twig:Sheet:Overlay />
     {% endblock %}
 
     <section
@@ -30,10 +30,10 @@
         {% block content %}{% endblock %}
 
         {% block close %}
-            <twig:SheetClose class="ring-offset-background focus:ring-ring data-[state=open]:bg-secondary absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none">
+            <twig:Sheet:Close class="ring-offset-background focus:ring-ring data-[state=open]:bg-secondary absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none">
                 <twig:ux:icon name="lucide:x" class="size-4" />
                 <span class="sr-only">Close</span>
-            </twig:SheetClose>
+            </twig:Sheet:Close>
         {% endblock %}
     </section>
 </div>
