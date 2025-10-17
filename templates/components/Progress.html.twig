@@ -2,7 +2,7 @@
     value = null,
 %}
 
-{% set numericValue = (value ?? 0)|float %}
+{% set numericValue = value ?? 0 %}
 {% set clampedValue = max(0, min(100, numericValue)) %}
 {% set indicatorOffset = 100 - clampedValue %}
 
