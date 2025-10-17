@@ -1,0 +1,51 @@
+{% props
+    id = null,
+    name = null,
+    value = 'on',
+    checked = false,
+    disabled = false,
+    required = false,
+    invalid = false,
+%}
+
+{% set inputId = id ?? 'checkbox-' ~ random() %}
+{% set ariaInvalid = invalid ? 'true' : null %}
+
+<input
+    type="checkbox"
+    class="peer sr-only"
+    id="{{ inputId }}"
+    {% if name %}name="{{ name }}"{% endif %}
+    {% if value is not null %}value="{{ value }}"{% endif %}
+    {% if checked %}checked{% endif %}
+    {% if disabled %}disabled{% endif %}
+    {% if required %}required{% endif %}
+    {% if ariaInvalid %}aria-invalid="{{ ariaInvalid }}"{% endif %}
+>
+<label
+    for="{{ inputId }}"
+    data-slot="checkbox"
+    class="{{ cn(
+        'border-input dark:bg-input/30 inline-flex size-4 shrink-0 items-center justify-center rounded-[4px] border shadow-xs transition-shadow outline-none',
+        'peer-focus-visible:border-ring peer-focus-visible:ring-ring/50 peer-focus-visible:ring-[3px]',
+        'aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive',
+        'peer-aria-[invalid=true]:ring-destructive/20 dark:peer-aria-[invalid=true]:ring-destructive/40 peer-aria-[invalid=true]:border-destructive',
+        'peer-checked:bg-primary peer-checked:text-primary-foreground dark:peer-checked:bg-primary peer-checked:border-primary',
+        'peer-disabled:cursor-not-allowed peer-disabled:opacity-50',
+        attributes.render('class')
+    ) }}"
+    {% if disabled %}aria-disabled="true"{% endif %}
+    {% if ariaInvalid %}aria-invalid="{{ ariaInvalid }}"{% endif %}
+    {{ attributes }}
+>
+    <span
+        data-slot="checkbox-indicator"
+        class="grid size-full place-content-center text-current transition-none"
+        aria-hidden="true"
+    >
+        <twig:ux:icon
+            name="lucide:check"
+            class="size-3.5 opacity-0 transition-opacity peer-checked:opacity-100"
+        />
+    </span>
+</label>

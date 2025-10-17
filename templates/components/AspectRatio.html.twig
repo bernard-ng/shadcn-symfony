@@ -1,0 +1,18 @@
+{% props
+    ratio = 1,
+%}
+
+{% set ratioValue = ratio ?? 1 %}
+{% set baseStyle = 'aspect-ratio: ' ~ ratioValue ~ ';' %}
+{% set userStyle = attribute(attributes, 'render', ['style']) %}
+{% set styleValue = baseStyle ~ (userStyle ? ' ' ~ userStyle : '') %}
+{% set forwardedAttributes = attribute(attributes, 'without', ['class', 'style']) ?? attributes %}
+
+<div
+    data-slot="aspect-ratio"
+    class="{{ cn('relative w-full', attributes.render('class')) }}"
+    style="{{ styleValue }}"
+    {{ forwardedAttributes }}
+>
+    {% block content %}{% endblock %}
+</div>
