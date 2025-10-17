@@ -58,15 +58,15 @@
             </div>
             <div class="flex flex-wrap items-center justify-center gap-6">
                 <twig:Avatar class="size-12">
-                    <twig:AvatarImage src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=120&h=120&fit=crop" alt="Portrait of Taylor" />
-                    <twig:AvatarFallback>TJ</twig:AvatarFallback>
+                    <twig:Avatar:Image src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=120&h=120&fit=crop" alt="Portrait of Taylor" />
+                    <twig:Avatar:Fallback>TJ</twig:Avatar:Fallback>
                 </twig:Avatar>
                 <twig:Avatar class="size-12 border-2 border-primary">
-                    <twig:AvatarImage src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=120&h=120&fit=crop" alt="Portrait of Sasha" />
-                    <twig:AvatarFallback>SR</twig:AvatarFallback>
+                    <twig:Avatar:Image src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=120&h=120&fit=crop" alt="Portrait of Sasha" />
+                    <twig:Avatar:Fallback>SR</twig:Avatar:Fallback>
                 </twig:Avatar>
                 <twig:Avatar class="size-12">
-                    <twig:AvatarFallback class="text-sm font-medium uppercase">JD</twig:AvatarFallback>
+                    <twig:Avatar:Fallback class="text-sm font-medium uppercase">JD</twig:Avatar:Fallback>
                 </twig:Avatar>
             </div>
         </section>
@@ -99,21 +99,21 @@
             <div class="grid w-full max-w-5xl gap-6 md:grid-cols-3">
                 <twig:Alert class="h-full text-left">
                     <twig:ux:icon name="lucide:check-circle-2" />
-                    <twig:AlertTitle>Success! Your changes have been saved</twig:AlertTitle>
-                    <twig:AlertDescription>
+                    <twig:Alert:Title>Success! Your changes have been saved</twig:Alert:Title>
+                    <twig:Alert:Description>
                         Everything looks good. You can safely continue with your workflow.
-                    </twig:AlertDescription>
+                    </twig:Alert:Description>
                 </twig:Alert>
                 <twig:Alert class="h-full text-left">
                     <twig:ux:icon name="lucide:popcorn" />
-                    <twig:AlertTitle>This alert has an icon and a title.</twig:AlertTitle>
+                    <twig:Alert:Title>This alert has an icon and a title.</twig:Alert:Title>
                 </twig:Alert>
                 <twig:Alert variant="destructive" class="h-full text-left">
                     <twig:ux:icon name="lucide:alert-circle" />
-                    <twig:AlertTitle>Unable to process your payment.</twig:AlertTitle>
-                    <twig:AlertDescription>
+                    <twig:Alert:Title>Unable to process your payment.</twig:Alert:Title>
+                    <twig:Alert:Description>
                         Double-check your billing details and ensure that your payment method has sufficient funds.
-                    </twig:AlertDescription>
+                    </twig:Alert:Description>
                 </twig:Alert>
             </div>
         </section>
@@ -127,13 +127,13 @@
             </div>
             <div class="flex w-full justify-center">
                 <twig:Card class="max-w-md text-left">
-                    <twig:CardHeader>
-                        <twig:CardTitle>Daily Overview</twig:CardTitle>
-                        <twig:CardDescription>
+                    <twig:Card:Header>
+                        <twig:Card:Title>Daily Overview</twig:Card:Title>
+                        <twig:Card:Description>
                             Track how your team performs across the most important metrics.
-                        </twig:CardDescription>
-                    </twig:CardHeader>
-                    <twig:CardContent class="space-y-4">
+                        </twig:Card:Description>
+                    </twig:Card:Header>
+                    <twig:Card:Content class="space-y-4">
                         <div class="flex items-center justify-between text-sm">
                             <span>Active users</span>
                             <span class="font-semibold">+4.75%</span>
@@ -143,11 +143,11 @@
                             <p>Tasks completed: <span class="font-semibold">32</span></p>
                             <p>Bugs resolved: <span class="font-semibold">12</span></p>
                         </div>
-                    </twig:CardContent>
-                    <twig:CardFooter>
+                    </twig:Card:Content>
+                    <twig:Card:Footer>
                         <twig:Button variant="outline">View report</twig:Button>
                         <twig:Button>Share</twig:Button>
-                    </twig:CardFooter>
+                    </twig:Card:Footer>
                 </twig:Card>
             </div>
         </section>
@@ -160,16 +160,16 @@
                 </p>
             </div>
             <twig:Sheet>
-                <twig:SheetTrigger tag="twig:Button" variant="outline">
+                <twig:Sheet:Trigger tag="twig:Button" variant="outline">
                     Open
-                </twig:SheetTrigger>
-                <twig:SheetContent class="sm:max-w-lg">
-                    <twig:SheetHeader>
-                        <twig:SheetTitle>Edit profile</twig:SheetTitle>
-                        <twig:SheetDescription>
+                </twig:Sheet:Trigger>
+                <twig:Sheet:Content class="sm:max-w-lg">
+                    <twig:Sheet:Header>
+                        <twig:Sheet:Title>Edit profile</twig:Sheet:Title>
+                        <twig:Sheet:Description>
                             Make changes to your profile here. Click save when you&apos;re done.
-                        </twig:SheetDescription>
-                    </twig:SheetHeader>
+                        </twig:Sheet:Description>
+                    </twig:Sheet:Header>
 
                     <div class="grid flex-1 auto-rows-min gap-6 px-4">
                         <div class="grid gap-3 text-left">
@@ -196,15 +196,15 @@
                         </div>
                     </div>
 
-                    <twig:SheetFooter>
+                    <twig:Sheet:Footer>
                         <twig:Button type="submit">Save changes</twig:Button>
-                        <twig:SheetClose
+                        <twig:Sheet:Close
                             class="h-9 rounded-md border bg-background px-4 py-2 text-sm font-medium shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                         >
                             Close
-                        </twig:SheetClose>
-                    </twig:SheetFooter>
-                </twig:SheetContent>
+                        </twig:Sheet:Close>
+                    </twig:Sheet:Footer>
+                </twig:Sheet:Content>
             </twig:Sheet>
         </section>
 
@@ -217,59 +217,59 @@
             </div>
             <div class="w-full max-w-4xl text-left">
                 <twig:Table containerClass="rounded-lg border" class="min-w-[640px]">
-                    <twig:TableCaption>A summary of your most recent invoices.</twig:TableCaption>
-                    <twig:TableHeader>
-                        <twig:TableRow>
-                            <twig:TableHead class="w-[140px]">Invoice</twig:TableHead>
-                            <twig:TableHead>Status</twig:TableHead>
-                            <twig:TableHead>Date</twig:TableHead>
-                            <twig:TableHead class="text-right">Amount</twig:TableHead>
-                        </twig:TableRow>
-                    </twig:TableHeader>
-                    <twig:TableBody>
-                        <twig:TableRow>
-                            <twig:TableCell>INV-001245</twig:TableCell>
-                            <twig:TableCell>
+                    <twig:Table:Caption>A summary of your most recent invoices.</twig:Table:Caption>
+                    <twig:Table:Header>
+                        <twig:Table:Row>
+                            <twig:Table:Head class="w-[140px]">Invoice</twig:Table:Head>
+                            <twig:Table:Head>Status</twig:Table:Head>
+                            <twig:Table:Head>Date</twig:Table:Head>
+                            <twig:Table:Head class="text-right">Amount</twig:Table:Head>
+                        </twig:Table:Row>
+                    </twig:Table:Header>
+                    <twig:Table:Body>
+                        <twig:Table:Row>
+                            <twig:Table:Cell>INV-001245</twig:Table:Cell>
+                            <twig:Table:Cell>
                                 <twig:Badge
                                     variant="outline"
                                     class="border-emerald-500/20 bg-emerald-500/10 text-emerald-600 [a&]:hover:bg-emerald-500/15"
                                 >
                                     Paid
                                 </twig:Badge>
-                            </twig:TableCell>
-                            <twig:TableCell>Oct 15, 2024</twig:TableCell>
-                            <twig:TableCell class="text-right">$1,248.00</twig:TableCell>
-                        </twig:TableRow>
-                        <twig:TableRow>
-                            <twig:TableCell>INV-001244</twig:TableCell>
-                            <twig:TableCell>
+                            </twig:Table:Cell>
+                            <twig:Table:Cell>Oct 15, 2024</twig:Table:Cell>
+                            <twig:Table:Cell class="text-right">$1,248.00</twig:Table:Cell>
+                        </twig:Table:Row>
+                        <twig:Table:Row>
+                            <twig:Table:Cell>INV-001244</twig:Table:Cell>
+                            <twig:Table:Cell>
                                 <twig:Badge
                                     variant="outline"
                                     class="border-amber-500/20 bg-amber-500/10 text-amber-600 [a&]:hover:bg-amber-500/15"
                                 >
                                     Pending
                                 </twig:Badge>
-                            </twig:TableCell>
-                            <twig:TableCell>Oct 12, 2024</twig:TableCell>
-                            <twig:TableCell class="text-right">$980.00</twig:TableCell>
-                        </twig:TableRow>
-                        <twig:TableRow>
-                            <twig:TableCell>INV-001243</twig:TableCell>
-                            <twig:TableCell>
+                            </twig:Table:Cell>
+                            <twig:Table:Cell>Oct 12, 2024</twig:Table:Cell>
+                            <twig:Table:Cell class="text-right">$980.00</twig:Table:Cell>
+                        </twig:Table:Row>
+                        <twig:Table:Row>
+                            <twig:Table:Cell>INV-001243</twig:Table:Cell>
+                            <twig:Table:Cell>
                                 <twig:Badge variant="outline" class="border-border text-muted-foreground">
                                     Draft
                                 </twig:Badge>
-                            </twig:TableCell>
-                            <twig:TableCell>Oct 5, 2024</twig:TableCell>
-                            <twig:TableCell class="text-right">$764.50</twig:TableCell>
-                        </twig:TableRow>
-                    </twig:TableBody>
-                    <twig:TableFooter>
-                        <twig:TableRow>
-                            <twig:TableCell colspan="3">Total</twig:TableCell>
-                            <twig:TableCell class="text-right">$2,992.50</twig:TableCell>
-                        </twig:TableRow>
-                    </twig:TableFooter>
+                            </twig:Table:Cell>
+                            <twig:Table:Cell>Oct 5, 2024</twig:Table:Cell>
+                            <twig:Table:Cell class="text-right">$764.50</twig:Table:Cell>
+                        </twig:Table:Row>
+                    </twig:Table:Body>
+                    <twig:Table:Footer>
+                        <twig:Table:Row>
+                            <twig:Table:Cell colspan="3">Total</twig:Table:Cell>
+                            <twig:Table:Cell class="text-right">$2,992.50</twig:Table:Cell>
+                        </twig:Table:Row>
+                    </twig:Table:Footer>
                 </twig:Table>
             </div>
         </section>
@@ -283,19 +283,19 @@
             </div>
             <div class="flex w-full justify-center">
                 <twig:Empty class="max-w-xl border">
-                    <twig:EmptyHeader>
-                        <twig:EmptyMedia variant="icon">
+                    <twig:Empty:Header>
+                        <twig:Empty:Media variant="icon">
                             <twig:ux:icon name="lucide:inbox" />
-                        </twig:EmptyMedia>
-                        <twig:EmptyTitle>No items yet</twig:EmptyTitle>
-                        <twig:EmptyDescription>
+                        </twig:Empty:Media>
+                        <twig:Empty:Title>No items yet</twig:Empty:Title>
+                        <twig:Empty:Description>
                             Get started by creating your first record. You can always import data later on.
-                        </twig:EmptyDescription>
-                    </twig:EmptyHeader>
-                    <twig:EmptyContent>
+                        </twig:Empty:Description>
+                    </twig:Empty:Header>
+                    <twig:Empty:Content>
                         <twig:Button>Create item</twig:Button>
                         <twig:Button variant="outline">Import data</twig:Button>
-                    </twig:EmptyContent>
+                    </twig:Empty:Content>
                 </twig:Empty>
             </div>
         </section>
@@ -308,46 +308,46 @@
                 </p>
             </div>
             <div class="flex w-full justify-center">
-                <twig:ItemGroup class="w-full max-w-3xl gap-3">
+                <twig:Item:Group class="w-full max-w-3xl gap-3">
                     <twig:Item variant="outline">
-                        <twig:ItemMedia variant="icon">
+                        <twig:Item:Media variant="icon">
                             <twig:ux:icon name="lucide:calendar" />
-                        </twig:ItemMedia>
-                        <twig:ItemContent>
-                            <twig:ItemHeader>
-                                <twig:ItemTitle>Quarterly planning</twig:ItemTitle>
-                                <twig:ItemActions>
+                        </twig:Item:Media>
+                        <twig:Item:Content>
+                            <twig:Item:Header>
+                                <twig:Item:Title>Quarterly planning</twig:Item:Title>
+                                <twig:Item:Actions>
                                     <twig:Button variant="ghost" size="icon" aria-label="Open">
                                         <twig:ux:icon name="lucide:ellipsis" />
                                     </twig:Button>
-                                </twig:ItemActions>
-                            </twig:ItemHeader>
-                            <twig:ItemDescription>
+                                </twig:Item:Actions>
+                            </twig:Item:Header>
+                            <twig:Item:Description>
                                 Collaborate with your team to define OKRs and milestones for the next quarter.
-                            </twig:ItemDescription>
-                            <twig:ItemFooter>
+                            </twig:Item:Description>
+                            <twig:Item:Footer>
                                 <div class="flex items-center gap-2 text-xs text-muted-foreground">
                                     <twig:ux:icon name="lucide:users" class="size-3.5" />
                                     <span>8 members</span>
                                 </div>
                                 <twig:Separator orientation="vertical" class="h-4" />
                                 <span class="text-xs text-muted-foreground">Updated 2 days ago</span>
-                            </twig:ItemFooter>
-                        </twig:ItemContent>
+                            </twig:Item:Footer>
+                        </twig:Item:Content>
                     </twig:Item>
 
                     <twig:Item variant="muted">
-                        <twig:ItemMedia variant="image">
+                        <twig:Item:Media variant="image">
                             <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=160&q=80" alt="Workspace" />
-                        </twig:ItemMedia>
-                        <twig:ItemContent>
-                            <twig:ItemTitle>Design review</twig:ItemTitle>
-                            <twig:ItemDescription>
+                        </twig:Item:Media>
+                        <twig:Item:Content>
+                            <twig:Item:Title>Design review</twig:Item:Title>
+                            <twig:Item:Description>
                                 Collect feedback on the latest interface refresh and align on next steps.
-                            </twig:ItemDescription>
-                        </twig:ItemContent>
+                            </twig:Item:Description>
+                        </twig:Item:Content>
                     </twig:Item>
-                </twig:ItemGroup>
+                </twig:Item:Group>
             </div>
         </section>
 
@@ -359,15 +359,15 @@
                 </p>
             </div>
             <div class="flex flex-col items-center gap-3">
-                <twig:KbdGroup>
+                <twig:Kbd:Group>
                     <twig:Kbd>⌘</twig:Kbd>
                     <twig:Kbd>K</twig:Kbd>
-                </twig:KbdGroup>
-                <twig:KbdGroup>
+                </twig:Kbd:Group>
+                <twig:Kbd:Group>
                     <twig:Kbd>Shift</twig:Kbd>
                     <twig:Separator orientation="vertical" class="h-4" />
                     <twig:Kbd>?</twig:Kbd>
-                </twig:KbdGroup>
+                </twig:Kbd:Group>
             </div>
         </section>
 
