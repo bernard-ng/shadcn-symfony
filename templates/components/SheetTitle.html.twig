@@ -1,0 +1,11 @@
+{% props
+    tag = 'h2',
+%}
+
+<{{ tag }}
+    data-slot="sheet-title"
+    class="{{ cn('text-foreground font-semibold', attributes.render('class')) }}"
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</{{ tag }}>

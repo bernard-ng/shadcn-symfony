@@ -1,0 +1,15 @@
+{% props
+    tag = 'button',
+    type = 'button',
+%}
+
+<{{ tag }}
+    data-slot="sheet-close"
+    data-ui--sheet-target="close"
+    data-action="click->ui--sheet#close"
+    {% if tag == 'button' %}type="{{ type }}"{% endif %}
+    class="{{ cn('inline-flex items-center justify-center', attributes.render('class')) }}"
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</{{ tag }}>
